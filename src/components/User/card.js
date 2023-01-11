@@ -39,7 +39,7 @@ function Cards(props) {
   const changecardname = () => {
     const { nameofvideo, newname } = namechange;
     if (newname && nameofvideo) {
-      axios.put(`http://localhost:3001/cardname/${props.parentid}`, namechange)
+      axios.put(process.env.REACT_APP_API_URL + `/cardname/${props.parentid}`, namechange)
         .then(res => console.log(res));
     }
     else {
@@ -53,7 +53,7 @@ function Cards(props) {
     const current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     const date_time = current_time + "  " +current_date;
     historyobject.time = date_time;
-    axios.post("http://localhost:3001/history", historyobject)
+    axios.post(process.env.REACT_APP_API_URL + "/history", historyobject)
       .then(res => console.log(res))
   }
 

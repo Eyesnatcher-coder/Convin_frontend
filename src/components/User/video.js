@@ -4,7 +4,6 @@ import Modal from 'react-bootstrap/Modal';
 function CenterModal(props) {
     var urls = props.src;
     var newurl = urls.replace('watch?v=','embed/');
-    // console.log(newurl);
   return (
     <Modal
       {...props}

@@ -1,5 +1,4 @@
-// import mobilegif from "./mobile.gif"
-// import {useNavigate} from "react-router-dom";
+
 import Button from 'react-bootstrap/Button';
 import undraw from '../undraw.png';
 import Modal from 'react-bootstrap/Modal';
@@ -33,7 +32,7 @@ const CustomerGrid = ({ bucketname, no_of_videos }) => {
         const {bucketname,newname} = namechange;
         // console.log(namechange);
         if (newname && bucketname) {
-          axios.put("http://localhost:3001/makebucket", namechange)
+          axios.put(process.env.REACT_APP_API_URL + "/makebucket", namechange)
             .then(res => console.log(res));
         }
         else {
@@ -43,15 +42,14 @@ const CustomerGrid = ({ bucketname, no_of_videos }) => {
 
       const deletebucket = () => {
         if(bucketname!==""){
-        axios.delete("http://localhost:3001/makebucket", {data:{namechange}},)
+        axios.delete(process.env.REACT_APP_API_URL + "/makebucket", {data:{namechange}},)
             .then(res => console.log(res));
         }
       }
 
       const gettingid = async() => {
-        await axios.post("http://localhost:3001/g/makebucket",namechange)
+        await axios.post(process.env.REACT_APP_API_URL + "/g/makebucket",namechange)
             .then(res => navigate(res.data._id))
-            // .then(res => console.log(res));
       }
 
 
@@ -67,7 +65,6 @@ const CustomerGrid = ({ bucketname, no_of_videos }) => {
                     <div>
                         <h6 style={{ marginTop: "20px" }}>Number of videos:{no_of_videos}</h6>
                     </div>
-                    {/* onClick={()=>navigate(`/customerlist/${account}`)} */}
                     <Button onClick={gettingid} style={{ marginTop: "20px" }} variant="dark" >View {bucketname}</Button>
                 </div>
                 <div style={{ marginLeft: "90%", marginTop: "-30px" }}>

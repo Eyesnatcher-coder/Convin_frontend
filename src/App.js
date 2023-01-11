@@ -29,7 +29,7 @@ function App() {
           <Route exact path='/customerlist' element={<><Home/><GridcustomerList/></>}></Route>
           <Route exact path='/history' element={<><Home/><History/></>}></Route>
           {
-            (users.length !== 0) ?
+            (users.length !== 0)?
           <>
           {users.map((user) => {
                         return <Route exact path={`/customerlist/${user._id}`} element={<><Home/><Paruser id={user._id} bucketname={user.bucketname} no_of_videos={user.no_of_videos} videos={user.videos}/></>}></Route> 

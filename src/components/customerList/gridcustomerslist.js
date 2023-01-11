@@ -1,12 +1,10 @@
 import { logins } from "./customerdata";
-// import Button from 'react-bootstrap/Button';
 import CustomerGrid from "./customergrid";
 import { useState, useEffect, useRef } from 'react';
 import "./gridcustomerlist.css";
 import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay';
 import Tooltip from 'react-bootstrap/Tooltip';
-// import bucketForm from "../bucket/bucketForm";
 import Modal from 'react-bootstrap/Modal';
 import React from "react";
 import Form from 'react-bootstrap/Form';
@@ -49,7 +47,7 @@ const GridcustomerList = () => {
         const { bucketname} = bucket;
         console.log(bucket);
         if (bucketname!=="") {
-          axios.post("http://localhost:3001/makebucket", bucket)
+          axios.post(process.env.REACT_APP_API_URL + "/makebucket", bucket)
             .then(res => console.log(res))
             
         }
