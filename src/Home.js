@@ -20,9 +20,9 @@ const Home = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse  id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link style={{color:"whitesmoke",fontWeight:"600"}} onClick={() => {navigates("/")}}>Home</Nav.Link>
-              <Nav.Link style={{color:"whitesmoke",fontWeight:"600"}} onClick={() => {navigates("/customerlist")}} >Buckets</Nav.Link>
-              <Nav.Link style={{color:"whitesmoke",fontWeight:"600"}} onClick={() => {navigates("/history")}} >History</Nav.Link>
+              <Nav.Link  onClick={() => {navigates("/")}}><span className='headeroption'>Home</span></Nav.Link>
+              <Nav.Link  onClick={() => {navigates("/customerlist")}} ><span className='headeroption'>Buckets</span></Nav.Link>
+              <Nav.Link  onClick={() => {navigates("/history")}} ><span className='headeroption'>History</span></Nav.Link>
             </Nav>
             <Nav style={{ display: "block" }}>
               <div><Navbar.Text><strong>Your Personalised Playlist App</strong></Navbar.Text></div>

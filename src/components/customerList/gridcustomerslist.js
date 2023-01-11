@@ -96,6 +96,7 @@ const GridcustomerList = () => {
                 </Overlay>
             </div>
             <div style={{paddingTop:"10px", margin: "5px", padding: "0.5%", borderRadius: "10px", display: "block", flexWrap: "wrap", justifyContent: "center", backgroundColor:"rgba(130, 0, 69, 0.8)" }}>
+                <p style={{padding:"10px", color:"red", backgroundColor:"rgba(240,240,240,0.6)",fontWeight:"700", borderRadius:"10px"}}>Please Refresh Page on Adding, deleting or editing a Bucket or Card to get updated Results...!!!</p>
                 {
                     users.map((user) => {
                         return <CustomerGrid bucketname={user.bucketname} no_of_videos={user.no_of_videos} />
