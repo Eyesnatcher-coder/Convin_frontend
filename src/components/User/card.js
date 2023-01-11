@@ -38,7 +38,6 @@ function Cards(props) {
 
   const changecardname = () => {
     const { nameofvideo, newname } = namechange;
-    // console.log(namechange);
     if (newname && nameofvideo) {
       axios.put(`http://localhost:3001/cardname/${props.parentid}`, namechange)
         .then(res => console.log(res));

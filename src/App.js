@@ -4,7 +4,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Content from './components/content/content';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CustomerList from './components/customerList/customerList';
 import GridcustomerList from './components/customerList/gridcustomerslist';
 import {logins} from './components/customerList/customerdata';
 import Paruser from './components/User/user';
@@ -27,7 +26,6 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/' element={<><Home/><Content /></>}></Route>
-          <Route exact path='/customer' element={<><Home/><CustomerList/></>}></Route>
           <Route exact path='/customerlist' element={<><Home/><GridcustomerList/></>}></Route>
           <Route exact path='/history' element={<><Home/><History/></>}></Route>
           {

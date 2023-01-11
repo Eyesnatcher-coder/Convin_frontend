@@ -7,6 +7,7 @@ function DeleteCard(props) {
     const tempfunc = props.deleteingcardfunction;
     useEffect(() => {
         tempfunc(deleteingcard);
+        //    eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <Card style={{ width: "auto" }}>
