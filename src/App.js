@@ -12,14 +12,14 @@ import History from './components/history/history';
 
 
 function App() {
-  // window.users = users;
+  
     const [users, setUsers] = useState([]);
     useEffect(() => {
         async function getUsers() {
             setUsers(await logins);
         }
         getUsers();
-    }, [])
+    }, []);
 
   return (
     <div className="App">

@@ -11,13 +11,16 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import bottom from '../../bottom.svg';
 const GridcustomerList = () => {
+
+
     const [users, setUsers] = useState([]);
-    useEffect(() => {
+   useEffect(() => {
         async function getUsers() {
             setUsers(await logins);
         }
         getUsers();
     }, [])
+
 
 
     const [show, setShows] = useState(false);
@@ -49,7 +52,7 @@ const GridcustomerList = () => {
         if (bucketname!=="") {
           axios.post(process.env.REACT_APP_API_URL + "/makebucket", bucket)
             .then(res => console.log(res))
-            
+            // .then(func_updatinglist('done'))
         }
         else {
           alert("invalid input")
